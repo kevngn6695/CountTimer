@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import "../assets/style/sass/components/timer.sass";
+import Timer from "../components/Timer";
 
 function CountdownTimer(props) {
   const [hour, setHour] = useState(0);
@@ -37,7 +38,11 @@ function CountdownTimer(props) {
     };
   }, [milisecond, second, minute, hour]);
 
-  return <div className={props.className}>{props.children}</div>;
+  return (
+    <div className={props.className}>
+      <Timer className="timer-form" />
+    </div>
+  );
 }
 
 export default React.memo(CountdownTimer);
