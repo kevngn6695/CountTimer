@@ -1,22 +1,51 @@
 import React from "react";
 
 import TextInput from "./TextInput";
-// import Container from "./Container";
+import Button from "./Button";
 
 import { generateListTextInput } from "../utils/init";
-import Wrapper from "./Wrapper";
 
 function Timer(props) {
   const listTextInput = [
-    generateListTextInput("hour", "text", "HH", "0", "2"),
-    generateListTextInput("minute", "text", "MM", "0", "2"),
-    generateListTextInput("second", "text", "SS", "0", "2"),
-    generateListTextInput("milisecond", "text", "MS", "0", "2"),
+    generateListTextInput(
+      "hour",
+      "text",
+      "HH",
+      "0",
+      "2",
+      props.hour,
+      props.onChangeHour
+    ),
+    generateListTextInput(
+      "minute",
+      "text",
+      "MM",
+      "0",
+      "2",
+      props.minute,
+      props.onChangeMinute
+    ),
+    generateListTextInput(
+      "second",
+      "text",
+      "SS",
+      "0",
+      "2",
+      props.second,
+      props.onChangeSecond
+    ),
+    generateListTextInput(
+      "milisecond",
+      "text",
+      "MS",
+      "0",
+      "2",
+      props.milisecond,
+      props.onChangeMilisecond
+    ),
   ];
   return (
     <>
-      {/* <button></button> */}
-
       <TextInput
         classNameForm={props.classNameForm}
         classNameLabel={props.classNameLabel}
@@ -24,6 +53,9 @@ function Timer(props) {
         classNameWrapper={props.classNameWrapper}
         listTextInput={listTextInput}
       />
+      {props.isRunning && <Button className="timer-btn play"></Button>}
+      {props.isRunning && <Button className="timer-btn pause"></Button>}
+      {/* {props.isRunning && <Button className="timer-btn reset"></Button>} */}
     </>
   );
 }

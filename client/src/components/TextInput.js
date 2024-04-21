@@ -24,6 +24,8 @@ function TextInput(props) {
             name={item.name}
             placeholder={item.placeholder}
             maxLength={item.maxLength}
+            value={item.value}
+            onChange={item.onChange}
           />
           <br />
         </Wrapper>

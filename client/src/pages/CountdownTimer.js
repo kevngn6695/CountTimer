@@ -12,6 +12,19 @@ function CountdownTimer(props) {
   const [milisecond, setMilisecond] = useState(0);
   const [isRunning, setIsRunning] = useState(null);
 
+  const handleOnChangeHour = (e) => {
+    setHour(e.target.value);
+  };
+  const handleOnChangeMinute = (e) => {
+    setMinute(e.target.value);
+  };
+  const handleOnChangeSecond = (e) => {
+    setSecond(e.target.value);
+  };
+  const handleOnChangeMilisecond = (e) => {
+    setMilisecond(e.target.value);
+  };
+
   useEffect(() => {
     let interval;
 
@@ -47,6 +60,15 @@ function CountdownTimer(props) {
         classNameLabel="timer-label"
         classNameInput="timer-input"
         classNameWrapper="timer-wrapper"
+        milisecond={milisecond}
+        second={second}
+        minute={minute}
+        hour={hour}
+        isRunning={isRunning}
+        onChangeHour={handleOnChangeHour}
+        onChangeMinute={handleOnChangeMinute}
+        onChangeSecond={handleOnChangeSecond}
+        onChangeMilisecond={handleOnChangeMilisecond}
       />
     </Container>
   );
