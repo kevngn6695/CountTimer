@@ -1,21 +1,30 @@
 import React from "react";
 
 import TextInput from "./TextInput";
+// import Container from "./Container";
 
 import { generateListTextInput } from "../utils/init";
+import Wrapper from "./Wrapper";
 
 function Timer(props) {
   const listTextInput = [
-    generateListTextInput("hour", "text", "hh", "0"),
-    generateListTextInput("minute", "text", "mm", "0"),
-    generateListTextInput("second", "text", "ss", "0"),
-    generateListTextInput("milisecond", "text", "mil", "0"),
+    generateListTextInput("hour", "text", "HH", "0", "2"),
+    generateListTextInput("minute", "text", "MM", "0", "2"),
+    generateListTextInput("second", "text", "SS", "0", "2"),
+    generateListTextInput("milisecond", "text", "MS", "0", "2"),
   ];
   return (
-    <div>
+    <>
       {/* <button></button> */}
-      <TextInput classNameForm="timer-form" listTextInput={listTextInput} />
-    </div>
+
+      <TextInput
+        classNameForm={props.classNameForm}
+        classNameLabel={props.classNameLabel}
+        classNameInput={props.classNameInput}
+        classNameWrapper={props.classNameWrapper}
+        listTextInput={listTextInput}
+      />
+    </>
   );
 }
 
