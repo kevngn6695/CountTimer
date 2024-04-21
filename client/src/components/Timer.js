@@ -53,9 +53,19 @@ function Timer(props) {
         classNameWrapper={props.classNameWrapper}
         listTextInput={listTextInput}
       />
-      {props.isRunning && <Button className="timer-btn play"></Button>}
-      {props.isRunning && <Button className="timer-btn pause"></Button>}
-      {/* {props.isRunning && <Button className="timer-btn reset"></Button>} */}
+      {!props.isRunning && (
+        <Button className="timer-btn play" onClick={props.onClickStart}>
+          Play
+        </Button>
+      )}
+      {props.isRunning && (
+        <Button className="timer-btn pause" onClick={props.onClickPause}>
+          Pause
+        </Button>
+      )}
+      <Button className="timer-btn reset" onClick={props.onClickReset}>
+        Reset
+      </Button>
     </>
   );
 }

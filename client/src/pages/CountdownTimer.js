@@ -25,6 +25,22 @@ function CountdownTimer(props) {
     setMilisecond(e.target.value);
   };
 
+  const handleClickStart = () => {
+    if (hour !== 0 || minute !== 0 || second !== 0 || milisecond !== 0) {
+      setIsRunning(true);
+    }
+  };
+  const handleClickReset = () => {
+    setIsRunning(false);
+    setHour(0);
+    setMinute(0);
+    setSecond(0);
+    setMilisecond(0);
+  };
+  const handleClickPause = () => {
+    setIsRunning(!isRunning);
+  };
+
   useEffect(() => {
     let interval;
 
@@ -51,7 +67,7 @@ function CountdownTimer(props) {
     return () => {
       clearInterval(interval);
     };
-  }, [milisecond, second, minute, hour]);
+  }, [milisecond, second, minute, hour, isRunning]);
 
   return (
     <Container className={props.className}>
@@ -65,6 +81,9 @@ function CountdownTimer(props) {
         minute={minute}
         hour={hour}
         isRunning={isRunning}
+        onClickReset={handleClickReset}
+        onClickStart={handleClickStart}
+        onClickPause={handleClickPause}
         onChangeHour={handleOnChangeHour}
         onChangeMinute={handleOnChangeMinute}
         onChangeSecond={handleOnChangeSecond}
