@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import Heading from "../components/Heading";
 import Container from "../components/Container";
@@ -13,23 +13,9 @@ function Home() {
     hour12: false,
   };
 
-  const [x, setX] = useState("50%");
-  const [y, setY] = useState("50%");
   const [time, setTime] = useState(null); // Initialize the state for time
 
-  const handleDragStart = (e) => {
-    console.log("Start");
-  };
-
-  const handleDrag = (e) => {
-    console.log("Dragging...");
-  };
-
-  const handleDragEnd = (e) => {
-    console.log("End");
-    setX(e.clientX);
-    setY(e.clientY);
-  };
+  const parentRef = useRef();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -43,18 +29,11 @@ function Home() {
   }, [options]); // Empty dependency array ensures the effect runs only once
 
   return (
-    <Container>
+    <Container ref={parentRef}>
       <Wrapper
-        draggable
         className="countdown-clock-wrapper handle"
-        onDragStart={handleDragStart}
-        onDrag={handleDrag}
-        onDragEnd={handleDragEnd}
-        style={{
-          position: "absolute",
-          left: x,
-          top: y,
-        }}
+        drag
+        dragContraints={parentRef}
       >
         <Heading className="countdown-clock-heading" h1>
           {time}
