@@ -10,3 +10,9 @@ export const HeadingProps = {
   h5: PropTypes.bool,
   h6: PropTypes.bool,
 };
+
+export const SpiralProgressBarProps = {
+  size: PropTypes.number,
+  progress: PropTypes.number,
+  strokeWidth: PropTypes.number,
+};

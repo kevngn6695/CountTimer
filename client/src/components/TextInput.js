@@ -4,6 +4,19 @@ import Wrapper from "../components/Wrapper";
 
 import "../assets/style/sass/components/textinput.sass";
 
+/**
+ * Represents a text input
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {string} props.classNameForm - The class name of the form element.
+ * @param {string} props.classNameWrapper - The class name of the wrapper element
+ * @param {string} props.classNameLabel - The class name of the label for the text input element.
+ * @param {string} props.classNameInput - The class name of the input element
+ * @param {number} props.listTextInput - The list text input.
+ * @returns {React.ReactElement} A spiral progressive bar element.
+ */
+
 function TextInput(props) {
   return (
     <form className={props.classNameForm}>
