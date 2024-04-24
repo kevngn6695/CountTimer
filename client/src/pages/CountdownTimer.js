@@ -4,7 +4,6 @@ import Timer from "../components/Timer";
 import Container from "../components/Container";
 
 import "../assets/style/sass/components/timer.sass";
-import Wrapper from "../components/Wrapper";
 
 function CountdownTimer(props) {
   const [hour, setHour] = useState(0);
@@ -72,26 +71,23 @@ function CountdownTimer(props) {
 
   return (
     <Container className={props.className}>
-      <Wrapper>
-        <Timer
-          classNameForm="timer-form"
-          classNameLabel="timer-label"
-          classNameInput="timer-input"
-          classNameWrapper="timer-wrapper"
-          milisecond={milisecond}
-          second={second}
-          minute={minute}
-          hour={hour}
-          isRunning={isRunning}
-          onClickReset={handleClickReset}
-          onClickStart={handleClickStart}
-          onClickPause={handleClickPause}
-          onChangeHour={handleOnChangeHour}
-          onChangeMinute={handleOnChangeMinute}
-          onChangeSecond={handleOnChangeSecond}
-          onChangeMilisecond={handleOnChangeMilisecond}
-        />
-      </Wrapper>
+      <Timer
+        milisecond={milisecond}
+        second={second}
+        minute={minute}
+        hour={hour}
+        shape="pill"
+        percentage={100}
+        thickness={1}
+        isRunning={isRunning}
+        onClickReset={handleClickReset}
+        onClickStart={handleClickStart}
+        onClickPause={handleClickPause}
+        onChangeHour={handleOnChangeHour}
+        onChangeMinute={handleOnChangeMinute}
+        onChangeSecond={handleOnChangeSecond}
+        onChangeMilisecond={handleOnChangeMilisecond}
+      />
     </Container>
   );
 }

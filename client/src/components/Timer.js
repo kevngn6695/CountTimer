@@ -3,11 +3,11 @@ import React from "react";
 import TextInput from "./TextInput";
 import Button from "./Button";
 import Wrapper from "./Wrapper";
+// import ProgressBar from "./ProgressBar";
 
 import { generateListTextInput } from "../utils/init";
 
 import "../assets/style/sass/components/timer.sass";
-import ProgressBar from "./ProgressBar";
 
 function Timer(props) {
   const listTextInput = [
@@ -51,23 +51,23 @@ function Timer(props) {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper className="timer-wrapper">
         <TextInput
-          classNameForm={props.classNameForm}
-          classNameLabel={props.classNameLabel}
-          classNameInput={props.classNameInput}
-          classNameWrapper={props.classNameWrapper}
+          classNameForm="timer-form"
+          classNameLabel="timer-label"
+          classNameInput="timer-input"
+          classNameWrapper="timer-wrapper"
           listTextInput={listTextInput}
         />
 
-        <ProgressBar
-          shape="pill"
-          value={50}
-          strokeWidth={0.5}
+        {/* <ProgressBar
+          shape={props.shape}
+          value={props.percentage}
+          strokeWidth={props.thickness}
           // trackColor={trackColor}
           progressColor="#000"
           transitionSpeed={0.5}
-        />
+        /> */}
 
         {!props.isRunning && (
           <Button className="timer-btn play" onClick={props.onClickStart}>

@@ -16,7 +16,11 @@ function Heading(props) {
 
   // Rendering the appropriate heading element with className and children props.
   if (level) {
-    return React.createElement(level, { className, ...props }, children);
+    return React.createElement(
+      motion[level],
+      { className, ...props },
+      children
+    );
   }
 
   // Returning null if no heading level prop is provided.
