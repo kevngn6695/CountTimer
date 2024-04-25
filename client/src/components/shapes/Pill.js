@@ -38,11 +38,10 @@ function Pill(props) {
       >
         {props.children}
       </div>
-      <svg width="auto" height="auto" viewBox="0 0 97 65">
+      <svg width="400px" height="300px" viewBox="0 0 400 200">
         <rect
-          className=""
-          width="197.835606"
-          height="47.835609"
+          width="350"
+          height="200"
           x="6.0821972"
           y="8.5821953"
           ry="24.086977"
@@ -56,8 +55,8 @@ function Pill(props) {
         <rect
           className="progress"
           ref={progressRef}
-          width="197.835606"
-          height="47.835609"
+          width="350"
+          height="200"
           x="6.0821972"
           y="8.5821953"
           ry="24.086977"
@@ -69,9 +68,7 @@ function Pill(props) {
           strokeLinejoin="round"
           strokeDasharray={pathLength}
           strokeDashoffset={strokeDashoffsetValue}
-          style={{
-            transition: `stroke-dashoffset ${props.transitionSpeed}s linear`,
-          }}
+          style={{ transition: `stroke-dashoffset ${props.transitionSpeed}s linear` }}
         />
       </svg>
     </>

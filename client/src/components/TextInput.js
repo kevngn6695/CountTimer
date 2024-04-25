@@ -14,7 +14,6 @@ import "../assets/style/sass/components/textinput.sass";
  * @param {number} props.listTextInput - The list text input.
  * @returns {React.ReactElement} A spiral progressive bar element.
  */
-
 function TextInput(props) {
   return (
     <form className={props.classNameForm}>

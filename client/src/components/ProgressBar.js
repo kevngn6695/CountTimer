@@ -28,7 +28,7 @@ function ProgressBar(props) {
   }
 
   return (
-    <Wrapper>
+    <Wrapper className={props.className}>
       <ShapeComponent
         value={props.value}
         strokeWidth={props.strokeWidth}

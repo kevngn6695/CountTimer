@@ -3,7 +3,7 @@ import React from "react";
 import TextInput from "./TextInput";
 import Button from "./Button";
 import Wrapper from "./Wrapper";
-// import ProgressBar from "./ProgressBar";
+import ProgressBar from "./ProgressBar";
 
 import { generateListTextInput } from "../utils/init";
 
@@ -60,14 +60,14 @@ function Timer(props) {
           listTextInput={listTextInput}
         />
 
-        {/* <ProgressBar
+        <ProgressBar
           shape={props.shape}
           value={props.percentage}
           strokeWidth={props.thickness}
           // trackColor={trackColor}
           progressColor="#000"
           transitionSpeed={0.5}
-        /> */}
+        />
 
         {!props.isRunning && (
           <Button className="timer-btn play" onClick={props.onClickStart}>

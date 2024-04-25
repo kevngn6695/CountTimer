@@ -1,7 +1,9 @@
 import React from "react";
 
 import { HeadingProps } from "../utils/type";
+
 import { motion } from "framer-motion";
+
 import "../assets/style/sass/components/heading.sass";
 
 function Heading(props) {
