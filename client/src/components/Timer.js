@@ -18,7 +18,7 @@ function Timer(props) {
       "0",
       "2",
       props.hour,
-      props.onChangeHour
+      props.onChangeHour,
     ),
     generateListTextInput(
       "minute",
@@ -27,7 +27,7 @@ function Timer(props) {
       "0",
       "2",
       props.minute,
-      props.onChangeMinute
+      props.onChangeMinute,
     ),
     generateListTextInput(
       "second",
@@ -36,7 +36,7 @@ function Timer(props) {
       "0",
       "2",
       props.second,
-      props.onChangeSecond
+      props.onChangeSecond,
     ),
     generateListTextInput(
       "milisecond",
@@ -45,30 +45,29 @@ function Timer(props) {
       "0",
       "2",
       props.milisecond,
-      props.onChangeMilisecond
+      props.onChangeMilisecond,
     ),
   ];
 
   return (
-    <>
-      <Wrapper className="timer-wrapper">
-        <TextInput
-          classNameForm="timer-form"
-          classNameLabel="timer-label"
-          classNameInput="timer-input"
-          classNameWrapper="timer-wrapper"
-          listTextInput={listTextInput}
-        />
+    <Wrapper className="timer-wrapper">
+      <TextInput
+        classNameForm="timer-form"
+        classNameLabel="timer-label"
+        classNameInput="timer-input"
+        classNameWrapper="timer-inner-wrapper"
+        listTextInput={listTextInput}
+      />
 
-        <ProgressBar
+      {/* <ProgressBar
           shape={props.shape}
           value={props.percentage}
           strokeWidth={props.thickness}
           // trackColor={trackColor}
           progressColor="#000"
           transitionSpeed={0.5}
-        />
-
+        /> */}
+      <Wrapper className="timer-btn-wrapper">
         {!props.isRunning && (
           <Button className="timer-btn play" onClick={props.onClickStart}>
             Play
@@ -83,7 +82,7 @@ function Timer(props) {
           Reset
         </Button>
       </Wrapper>
-    </>
+    </Wrapper>
   );
 }
 

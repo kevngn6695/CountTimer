@@ -1,5 +1,7 @@
 import React from "react";
 
+import Wrapper from "./Wrapper";
+
 import "../assets/style/sass/components/textinput.sass";
 
 /**
@@ -18,7 +20,7 @@ function TextInput(props) {
   return (
     <form className={props.classNameForm}>
       {props.listTextInput.map((item) => (
-        <>
+        <Wrapper className="input-wrapper">
           <label
             className={`${props.classNameLabel} ${item.name}`}
             htmlFor={item.name}
@@ -38,7 +40,7 @@ function TextInput(props) {
             onChange={item.onChange}
           />
           <br />
-        </>
+        </Wrapper>
       ))}
     </form>
   );

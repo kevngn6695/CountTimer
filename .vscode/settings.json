@@ -1,15 +1,14 @@
 {
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true,
-        "source.fixAll.stylelint": true  
-    },
-    "editor.accessibilityPageSize": 10,
-    "editor.letterSpacing": 0,
-    "editor.smoothScrolling": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "editor.accessibilityPageSize": 10,
+  "editor.letterSpacing": 0,
+  "editor.smoothScrolling": true,
 
-    "css.validate": false,
-    "less.validate": false,
-    "scss.validate": false,
-    "sass.validate": false,
-
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "sass.validate": false
 }

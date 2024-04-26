@@ -27,14 +27,14 @@ function Pill(props) {
   return (
     <>
       <div
-      // style={{
-      //   position: "absolute",
-      //   width: "100%",
-      //   height: "100%",
-      //   display: "flex",
-      //   alignItems: "center",
-      //   justifyContent: "center",
-      // }}
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
         {props.children}
       </div>
@@ -68,7 +68,9 @@ function Pill(props) {
           strokeLinejoin="round"
           strokeDasharray={pathLength}
           strokeDashoffset={strokeDashoffsetValue}
-          style={{ transition: `stroke-dashoffset ${props.transitionSpeed}s linear` }}
+          style={{
+            transition: `stroke-dashoffset ${props.transitionSpeed}s linear`,
+          }}
         />
       </svg>
     </>
