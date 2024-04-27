@@ -2,6 +2,8 @@ import React from "react";
 
 import { motion } from "framer-motion";
 
+import { WrapperProps } from "../utils/type";
+
 import "../assets/style/sass/components/wrapper.sass";
 
 /**
@@ -11,7 +13,6 @@ import "../assets/style/sass/components/wrapper.sass";
  * @param {Object} props - The component props.
  * @param {Object} props.children - The children element for the component.
  * @param {string} props.className - The class name of the wrapper element
- * @param {Object} props.children - The children element for the component.
  * @param {string} props.className - The class name of the wrapper element
  * @returns {React.ReactElement} A spiral progressive bar element.
  */
@@ -27,5 +28,7 @@ function Wrapper(props) {
     </motion.div>
   );
 }
+
+Wrapper.propTypes = WrapperProps;
 
 export default React.memo(Wrapper);

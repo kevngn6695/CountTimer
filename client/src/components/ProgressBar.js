@@ -2,6 +2,8 @@ import React from "react";
 
 import Pill from "./shapes/Pill";
 
+import { ProgressBarProps } from "../utils/type";
+
 import Wrapper from "./Wrapper";
 
 /**
@@ -41,5 +43,7 @@ function ProgressBar(props) {
     </Wrapper>
   );
 }
+
+ProgressBar.propTypes = ProgressBarProps;
 
 export default React.memo(ProgressBar);

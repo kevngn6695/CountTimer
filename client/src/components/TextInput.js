@@ -2,6 +2,8 @@ import React from "react";
 
 import Wrapper from "./Wrapper";
 
+import { TextInputProps } from "../utils/type";
+
 import "../assets/style/sass/components/textinput.sass";
 
 /**
@@ -45,5 +47,7 @@ function TextInput(props) {
     </form>
   );
 }
+
+TextInput.propTypes = TextInputProps;
 
 export default React.memo(TextInput);

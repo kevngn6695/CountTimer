@@ -41,26 +41,30 @@ function CountdownTimer(props) {
     setIsRunning(!isRunning);
   };
 
+  const handleTimerLogic = (hour, minute, second, milisecond) => {
+    if (milisecond > 0) {
+      setMilisecond((milisecond) => milisecond - 1);
+    } else if (second > 0) {
+      setSecond((second) => second - 1);
+      setMilisecond(99);
+    } else if (minute > 0) {
+      setMinute((minute) => minute - 1);
+      setSecond(59);
+      setMilisecond(99);
+    } else if (hour > 0) {
+      setHour((hour) => hour - 1);
+      setMinute(59);
+      setSecond(59);
+      setMilisecond(99);
+    }
+  };
+
   useEffect(() => {
     let interval;
 
     if (isRunning) {
       interval = setInterval(() => {
-        if (milisecond > 0) {
-          setMilisecond((milisecond) => milisecond - 1);
-        } else if (second > 0) {
-          setSecond((second) => second - 1);
-          setMilisecond(99);
-        } else if (minute > 0) {
-          setMinute((minute) => minute - 1);
-          setSecond(59);
-          setMilisecond(99);
-        } else if (hour > 0) {
-          setHour((hour) => hour - 1);
-          setMinute(59);
-          setSecond(59);
-          setMilisecond(99);
-        }
+        handleTimerLogic(hour, minute, second, milisecond);
       }, 10);
     }
 

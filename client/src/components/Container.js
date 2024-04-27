@@ -1,5 +1,7 @@
 import React from "react";
 
+import { ContainerProps } from "../utils/type";
+
 import "../assets/style/sass/components/container.sass";
 
 /**
@@ -18,5 +20,7 @@ function Container(props) {
     </section>
   );
 }
+
+Container.propTypes = ContainerProps;
 
 export default React.memo(Container);

@@ -3,9 +3,10 @@ import React from "react";
 import TextInput from "./TextInput";
 import Button from "./Button";
 import Wrapper from "./Wrapper";
-import ProgressBar from "./ProgressBar";
+// import ProgressBar from "./ProgressBar";
 
 import { generateListTextInput } from "../utils/init";
+import { TimerProps } from "../utils/type";
 
 import "../assets/style/sass/components/timer.sass";
 
@@ -85,5 +86,7 @@ function Timer(props) {
     </Wrapper>
   );
 }
+
+Timer.propTypes = TimerProps;
 
 export default React.memo(Timer);
