@@ -15,12 +15,15 @@ function CountdownTimer(props) {
   const handleOnChangeHour = (e) => {
     if (e.target.value >= 0 && e.target.value <= 24) setHour(e.target.value);
   };
+
   const handleOnChangeMinute = (e) => {
     if (e.target.value >= 0 && e.target.value <= 60) setMinute(e.target.value);
   };
+
   const handleOnChangeSecond = (e) => {
     if (e.target.value >= 0 && e.target.value <= 60) setSecond(e.target.value);
   };
+
   const handleOnChangeMilisecond = (e) => {
     if (e.target.value >= 0 && e.target.value <= 100)
       setMilisecond(e.target.value);
@@ -31,6 +34,7 @@ function CountdownTimer(props) {
       setIsRunning(true);
     }
   };
+
   const handleClickReset = () => {
     setIsRunning(false);
     setHour(0);
@@ -38,6 +42,7 @@ function CountdownTimer(props) {
     setSecond(0);
     setMilisecond(0);
   };
+
   const handleClickPause = () => {
     setIsRunning(!isRunning);
   };
