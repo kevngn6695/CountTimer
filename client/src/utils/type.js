@@ -50,3 +50,11 @@ export const TimerProps = {
 export const ProgressBarProps = {
   ...CommonProps,
 };
+
+export const NumberCardProps = {
+  ...CommonProps,
+};
+
+export const FlipCardProps = {
+  ...CommonProps,
+};

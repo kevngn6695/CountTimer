@@ -20,7 +20,7 @@ import "../assets/style/sass/components/textinput.sass";
  */
 function TextInput(props) {
   return (
-    <form className={props.classNameForm}>
+    <form className={props.classNameForm} {...props}>
       {props.listTextInput.map((item) => (
         <Wrapper className="input-wrapper">
           <label

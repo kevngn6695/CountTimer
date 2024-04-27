@@ -13,16 +13,17 @@ function CountdownTimer(props) {
   const [isRunning, setIsRunning] = useState(null);
 
   const handleOnChangeHour = (e) => {
-    setHour(e.target.value);
+    if (e.target.value >= 0 && e.target.value <= 24) setHour(e.target.value);
   };
   const handleOnChangeMinute = (e) => {
-    setMinute(e.target.value);
+    if (e.target.value >= 0 && e.target.value <= 60) setMinute(e.target.value);
   };
   const handleOnChangeSecond = (e) => {
-    setSecond(e.target.value);
+    if (e.target.value >= 0 && e.target.value <= 60) setSecond(e.target.value);
   };
   const handleOnChangeMilisecond = (e) => {
-    setMilisecond(e.target.value);
+    if (e.target.value >= 0 && e.target.value <= 100)
+      setMilisecond(e.target.value);
   };
 
   const handleClickStart = () => {
@@ -43,15 +44,27 @@ function CountdownTimer(props) {
 
   const handleTimerLogic = (hour, minute, second, milisecond) => {
     if (milisecond > 0) {
+      if (milisecond > 100) {
+        setMilisecond(99);
+      }
       setMilisecond((milisecond) => milisecond - 1);
     } else if (second > 0) {
+      if (second > 60) {
+        setSecond(59);
+      }
       setSecond((second) => second - 1);
       setMilisecond(99);
     } else if (minute > 0) {
+      if (minute > 60) {
+        setMinute(59);
+      }
       setMinute((minute) => minute - 1);
       setSecond(59);
       setMilisecond(99);
     } else if (hour > 0) {
+      if (hour > 24) {
+        setHour(24);
+      }
       setHour((hour) => hour - 1);
       setMinute(59);
       setSecond(59);

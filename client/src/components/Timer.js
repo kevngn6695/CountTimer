@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import TextInput from "./TextInput";
 import Button from "./Button";
@@ -11,6 +11,9 @@ import { TimerProps } from "../utils/type";
 import "../assets/style/sass/components/timer.sass";
 
 function Timer(props) {
+  const [mouseMove, setMouseMove] = useState(false);
+  const [submitVal, setSubmitVal] = useState("");
+
   const listTextInput = [
     generateListTextInput(
       "hour",
@@ -50,8 +53,19 @@ function Timer(props) {
     ),
   ];
 
+  const handleOnMouseEnter = () => {
+    setMouseMove(true);
+  };
+  const handleOnMouseLeave = () => {
+    setMouseMove(false);
+  };
+
   return (
-    <Wrapper className="timer-wrapper">
+    <Wrapper
+      className={`timer-wrapper`}
+      onMouseEnter={handleOnMouseEnter}
+      onMouseLeave={handleOnMouseLeave}
+    >
       <TextInput
         classNameForm="timer-form"
         classNameLabel="timer-label"
@@ -68,18 +82,27 @@ function Timer(props) {
           progressColor="#000"
           transitionSpeed={0.5}
         /> */}
-      <Wrapper className="timer-btn-wrapper">
+      <Wrapper className={`timer-btn-wrapper ${mouseMove ? "in" : "out"}`}>
         {!props.isRunning && (
-          <Button className="timer-btn play" onClick={props.onClickStart}>
+          <Button
+            className={`timer-btn play ${mouseMove ? "in" : "out"}`}
+            onClick={props.onClickStart}
+          >
             Play
           </Button>
         )}
         {props.isRunning && (
-          <Button className="timer-btn pause" onClick={props.onClickPause}>
+          <Button
+            className={`timer-btn pause ${mouseMove ? "in" : "out"}`}
+            onClick={props.onClickPause}
+          >
             Pause
           </Button>
         )}
-        <Button className="timer-btn stop" onClick={props.onClickReset}>
+        <Button
+          className={`timer-btn stop ${mouseMove ? "in" : "out"}`}
+          onClick={props.onClickReset}
+        >
           Reset
         </Button>
       </Wrapper>
